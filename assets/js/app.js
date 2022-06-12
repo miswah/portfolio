@@ -31,7 +31,30 @@ let barInterval = setInterval(() => {
 
         //Show the svg
         gsap.to(".loading__svg", {
+            duration: 10,
             opacity: 1,
+            rotate: "360deg"
+        })
+
+        //remove the circle
+        gsap.to(".loading__box", {
+            delay: 1,
+            border: "none",
+        })
+
+        //Remove background colour
+        gsap.to(".loading", {
+            delay: 1.5,
+            duration: 2,
+            background: "transparent",
+            opacity: 0.4,
+        })
+
+        //Slow down the rotating speed
+        gsap.to(".loading__svg", {
+            duration: 100,
+            delay: 2,
+            rotate: "360deg"
         })
     }
 }, 20)
