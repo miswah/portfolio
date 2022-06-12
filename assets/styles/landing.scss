@@ -56,6 +56,16 @@
             }
         }
     }
+
+    .socials{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
 }
 
 
@@ -161,3 +171,35 @@
         }
     }
 }
+
+
+.icon{
+    color: #fff;
+    font-size: 36px;
+    
+    &:hover{
+        animation: coloredIcons 0.7s infinite;
+    }
+
+    @keyframes coloredIcons {
+        0% {
+        text-shadow: 5px 4px red, -5px -6px blue;
+        }
+        25% {
+        text-shadow: -5px -6px red, 5px 4px blue;
+        }
+        50% {
+            text-shadow: 5px -4px red, -8px 4px blue;
+        }
+        75% {
+            text-shadow: -8px -4px red, -5px -4px blue;
+        }
+        100% {
+            text-shadow: -5px 0px red, 5px -4px blue;
+        }
+
+    }
+}
+
+
+
