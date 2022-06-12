@@ -11,6 +11,7 @@
     display: grid;
     place-items: center;
     font-family: 'Orbitron', sans-serif;
+    display: none; //Remove this please
 
     &__box {
         position: relative;
