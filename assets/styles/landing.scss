@@ -33,6 +33,28 @@
             }
         }
 
+        @media (max-width: 1200px){
+            &__wrap{
+                width: 100vw;
+            }
+        }
+
+        @media (max-width: 650px){
+            &__sm{
+                display: none;
+            }
+        }
+        @media (max-width: 370px){
+            &{
+                left: 36%;
+            }
+            &__wrap{
+                gap: 20%;
+            }
+            .link-animation[data-text="Home"]{
+                display: none;
+            }
+        }
     }
 }
 
@@ -131,5 +153,11 @@
     &:hover::after{
         transform: translate3d(0, -5px, 0);
         transition: transform 0.5s cubic-bezier(0.585, 2.5, 0.645, 0.55);
+    }
+    @media (max-width: 800px){
+        &{
+            transform: scale3d(0.7, 0.7, 0.7);
+            font-size: 23px;
+        }
     }
 }
