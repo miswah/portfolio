@@ -47,7 +47,8 @@ let barInterval = setInterval(() => {
             delay: 1.5,
             duration: 2,
             background: "transparent",
-            opacity: 0.4,
+            opacity: 0,
+            zIndex: 1,
         })
 
         //Slow down the rotating speed
