@@ -38,8 +38,9 @@
 
     &__img{
         position: absolute;
-        width: 100%;
+        width: 95%;
         height: 700px;
+        object-fit: cover;
         img{
             width: 90vw;
         }
