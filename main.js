@@ -6,3 +6,4 @@ import "./assets/styles/landing.scss";
 import "./assets/styles/skills.scss";
 import "./assets/styles/projects.scss";
 import "./assets/styles/faq.scss";
+import "./assets/styles/contact.scss";
