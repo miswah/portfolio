@@ -49,6 +49,7 @@ let barInterval = setInterval(() => {
             background: "transparent",
             opacity: 0,
             zIndex: 1,
+            display: "none"
         })
 
         //Slow down the rotating speed
@@ -92,6 +93,7 @@ const questions = [...document.querySelectorAll(".question")];
 questions.map((question) => {
     let q_text = question.querySelector("h3");
     q_text.addEventListener('click', () => {
+        console.log('hey')
         questions.filter((q) => q !== question).map((q) => q.classList.remove('open'))
         question.classList.toggle("open")
     })
