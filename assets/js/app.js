@@ -57,6 +57,32 @@ let barInterval = setInterval(() => {
             delay: 1,
             rotate: "360deg"
         })
+
+        //Header animation
+        gsap.to("header", {
+            duration: 1,
+            delay: 1,
+            top: "0",
+        })
+          //socials animation
+        gsap.to(".socials", {
+            duration: 1,
+            delay: 1.5,
+            bottom: "10rem",
+        })
+           //scroll down animation
+        gsap.to(".scrollDown", {
+            duration: 1,
+            delay: 1.5,
+            bottom: "3rem",
+        })
+
+         //Info animation
+        gsap.to(".intro", {
+            duration: 1,
+            delay: 1.5,
+            left: "10vw",
+        })
     }
 }, 20)
 
