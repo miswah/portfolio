@@ -109,7 +109,7 @@ let barInterval = setInterval(() => {
         //make the box a circle
         gsap.to(".loading__box", {
             duration: 1,
-            height: "500px",
+            height: "50vh",
             borderRadius: "50%"
         })
 
@@ -168,7 +168,8 @@ let barInterval = setInterval(() => {
             delay: 1.5,
             left: "10vw",
         })
-        let smoothScroll = Scrollbar.init(document.body,{
+        setTimeout(()=> {
+          let smoothScroll = Scrollbar.init(document.body,{
             alwaysShowTracks:true,
             damping: 0.1,
             plugins: {
@@ -177,6 +178,9 @@ let barInterval = setInterval(() => {
                 },
               },
         });
+        smoothScroll.track.xAxis.element.remove();
+        }, 2000)
+     
         })  
     }
 }, 20)
