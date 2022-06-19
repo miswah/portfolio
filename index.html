@@ -233,26 +233,28 @@
                 <div class="section__header-subtitle">Get in touch</div>
             </div>
             <div class="contact__form">
-                <form action="#" class="form">
+                <!-- https://formsubmit.co -->
+                <!-- formspree -->
+                <form action="https://formsubmit.co/shahdil.666@gmail.com" method="POST" class="form">
                     <div class="form__flex">
                         <div class="form__info">
                             <label>Hey, My name is </label>
-                            <input type="text" placeholder="Type here">
+                            <input type="text" placeholder="Type here" name="full name" required>
                         </div>
                         <div class="form__info">
                             <label>I'm looking for </label>
-                            <input type="text" placeholder="Type of service">
+                            <input type="text" placeholder="Type of service" name="service">
                         </div>
                     </div>
                         <div class="form__flex">
                             <div class="form__info">
                                 <label>Get in touch with me at </label>
-                                <input type="text" placeholder="Your Email id here">
+                                <input type="email" placeholder="Your Email id here" name="email" reequired>
                             </div>
                         </div>
                         <div class="form__flex">
                             
-                               <textarea placeholder="Your Message"></textarea>
+                               <textarea placeholder="Your Message" name="message" required ></textarea>
                            
                         </div>
                         <div class="form__flex">
