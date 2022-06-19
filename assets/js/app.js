@@ -1,4 +1,6 @@
 import gsap from "gsap";
+import imagesLoaded from "imagesloaded";
+import Scrollbar from "smooth-scrollbar";
 
 const bar = document.querySelector(".loading__bar--inner");
 const counter_number = document.querySelector(".loading__counter--number")
@@ -41,14 +43,14 @@ let barInterval = setInterval(() => {
             delay: 1,
             border: "none",
         })
-
-        //Remove background colour
+        imagesLoaded(document.querySelectorAll('img'), () => {
+             //Remove background colour
         gsap.to(".loading", {
             delay: 1,
             duration: 2,
             background: "transparent",
             opacity: 0,
-            zIndex: 1,
+            zIndex: 0,
             display: "none"
         })
 
@@ -84,6 +86,11 @@ let barInterval = setInterval(() => {
             delay: 1.5,
             left: "10vw",
         })
+        let smoothScroll = Scrollbar.init(document.body,{
+            alwaysShowTracks:true,
+            damping: 0.1,
+        });
+        })  
     }
 }, 20)
 

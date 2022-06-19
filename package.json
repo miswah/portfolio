@@ -18,6 +18,8 @@
   "dependencies": {
     "g": "^2.0.1",
     "gsap": "^3.10.4",
+    "imagesloaded": "^5.0.0",
+    "smooth-scrollbar": "^8.7.4",
     "three": "^0.141.0"
   }
 }
