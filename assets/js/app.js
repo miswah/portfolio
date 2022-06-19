@@ -1,9 +1,91 @@
 import gsap from "gsap";
 import imagesLoaded from "imagesloaded";
-import Scrollbar from "smooth-scrollbar";
+import Scrollbar, { ScrollbarPlugin } from "smooth-scrollbar";
 
 const bar = document.querySelector(".loading__bar--inner");
 const counter_number = document.querySelector(".loading__counter--number")
+
+
+//Disable X scroll
+
+
+class DisableScrollPlugin extends ScrollbarPlugin {
+  static pluginName = 'disableScroll';
+
+  static defaultOptions = {
+    direction: '',
+  };
+
+  transformDelta(delta) {
+    if (this.options.direction) {
+      delta[this.options.direction] = 0;
+    }
+
+    return { ...delta };
+  }
+}
+
+// load the plugin
+Scrollbar.use(DisableScrollPlugin);
+
+
+
+
+//Enable hash navigation
+class AnchorPlugin extends ScrollbarPlugin {
+  static pluginName = 'anchor';
+
+  onHashChange = () => {
+    this.jumpToHash(window.location.hash);
+  };
+
+  onClick = (event) => {
+    const { target } = event;
+
+    if (target.tagName !== 'A') {
+      return;
+    }
+
+    const hash = target.getAttribute('href');
+
+    if (!hash || hash.charAt(0) !== '#') {
+      return;
+    }
+
+    this.jumpToHash(hash);
+  };
+
+  jumpToHash = (hash) => {
+    const { scrollbar } = this;
+
+    if (!hash) {
+      return;
+    }    
+
+    // reset scrollTop
+    scrollbar.containerEl.scrollTop = 0;
+
+    scrollbar.scrollIntoView(document.querySelector(hash));
+  };
+
+  onInit() {
+    this.jumpToHash(window.location.hash);
+
+    window.addEventListener('hashchange', this.onHashChange);
+
+    this.scrollbar.contentEl.addEventListener('click', this.onClick);
+  }
+
+  onDestory() {
+    window.removeEventListener('hashchange', this.onHashChange);
+
+    this.scrollbar.contentEl.removeEventListener('click', this.onClick);
+  }
+}
+
+// usage
+Scrollbar.use(AnchorPlugin);
+
 
 let c = 0;
 let barInterval = setInterval(() => {
@@ -89,6 +171,11 @@ let barInterval = setInterval(() => {
         let smoothScroll = Scrollbar.init(document.body,{
             alwaysShowTracks:true,
             damping: 0.1,
+            plugins: {
+                disableScroll: {
+                  direction: 'x',
+                },
+              },
         });
         })  
     }
