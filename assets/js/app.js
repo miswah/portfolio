@@ -44,7 +44,7 @@ let barInterval = setInterval(() => {
 
         //Remove background colour
         gsap.to(".loading", {
-            delay: 1.5,
+            delay: 1,
             duration: 2,
             background: "transparent",
             opacity: 0,
@@ -54,7 +54,7 @@ let barInterval = setInterval(() => {
         //Slow down the rotating speed
         gsap.to(".loading__svg", {
             duration: 100,
-            delay: 2,
+            delay: 1,
             rotate: "360deg"
         })
     }
